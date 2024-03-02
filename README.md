@@ -9,7 +9,8 @@ Make sure you have the following tools installed on your system:
 - LaTeX distribution (e.g., TeX Live, MiKTeX)
 - Biber (for bibliography)
 - makeglossaries (for glossary)
-- (further packages may be necessary so look out for log information when compiling)
+
+_(further packages may be necessary so look out for log information when compiling)_
 
 Here is list of **every** file needed for this project to successfully compile:
 
@@ -188,7 +189,7 @@ Here is list of **every** file needed for this project to successfully compile:
 | appendix/index.tex               |                                               |
 | appendix/content.tex             |                                               |
 
-*Note: Most of these packages are likely included in your LaTeX distribution.*
+_Note: Most of these packages are likely included in your LaTeX distribution._
 
 ## Compilation
 
