@@ -14,11 +14,10 @@
 *.log
 *.lot
 *.out
+*.pdf
 *.run.xml
+*.synctex.gz
 *.toc
-
-# Compiled PDF
-PESTI-Report.pdf
 
 # Neovim configuration file
 .nvimrc
