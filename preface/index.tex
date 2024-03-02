@@ -1,0 +1,36 @@
+
+% Roman page numbering for preliminaries
+\renewcommand{\thepage}{\roman{page}}
+
+\input{./preface/title.tex}
+
+% \clearpage{}
+% \begingroup{}
+%     \null{}
+%     \thispagestyle{empty}%
+%     \addtocounter{page}{-1}%
+%     \hypersetup{pageanchor=false}%
+%     \clearpage{}
+% \endgroup{}
+
+\input{./preface/dedicatory.tex}
+\input{./preface/acknowledgements.tex}
+\input{./preface/abstract.tex}
+
+\renewcommand{\contentsname}{\'Indice}
+\renewcommand{\listfigurename}{\'Indice de Figuras}
+\renewcommand{\listtablename}{\'Indice de Tabelas}
+
+\newpage{}
+\tableofcontents{}
+\pdfbookmark[0]{\contentsname}{toc}
+
+\newpage{}
+\listoffigures{}
+\pdfbookmark[0]{\listfigurename}{lof}
+
+\newpage{}
+\listoftables{}
+\pdfbookmark[0]{\listtablename}{lot}
+
+\input{./preface/glossary.tex}

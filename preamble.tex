@@ -1,0 +1,83 @@
+
+\usepackage[utf8]{inputenc}
+\usepackage{csquotes}
+\usepackage[portuguese]{babel}
+\usepackage{hyphenat}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{booktabs}
+\usepackage{color}
+\usepackage[calc,showdow,english]{datetime2}
+\usepackage{empheq}
+\usepackage{fancyhdr}
+\usepackage{geometry}
+\usepackage{glossaries}
+\usepackage{graphicx}
+\usepackage{lipsum}
+\usepackage{mdframed}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage{tocloft}
+
+
+\usepackage[hidelinks]{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+
+\usepackage[backend=biber, style=apa,urldate=iso,seconds=true,dateabbrev=false]{biblatex}
+\addbibresource{refs.bib}
+
+
+% New command to make the lines in the title page
+\newcommand{\HRule}{\rule{.9\linewidth}{.6pt}}
+
+% New command for a rule to be used under figures
+\newcommand{\decoRule}{\rule{.8\textwidth}{.4pt}}
+
+% New command to make the lines in the title page
+\newcommand{\HRuleFront}{\rule{.98\textwidth}{.3pt}}
+
+\DTMnewdatestyle{mydateformat}{%
+    \renewcommand{\DTMdisplaydate}[4]{%
+        %    \DTMshortweekdayname{##4},\space%
+        \DTMmonthname{##2},\nobreakspace%
+        %    \number##3,\space%
+        \number##1%
+    }%
+    \renewcommand{\DTMDisplaydate}{\DTMdisplaydate}%
+}
+
+
+\NewDocumentCommand{\bhrule}{}{\typeout{--------------------}}
+\NewDocumentCommand{\tttypeout}{m}{\bhrule\typeout{\space{} #1}\bhrule}
+\newcommand{\checktoopen}{
+    \if@openright\cleardoublepage\else\clearpage\fi{}
+	\ifdef{\phantomsection}{\phantomsection}{}
+    % The \phantomsection command is necessary for hyperref to jump to the correct page
+}
+
+\DeclareDocumentEnvironment{acknowledgements}{}{%
+    % \checktoopen{}
+	% \tttypeout{Agradecimentos}
+	\chapter*{Agradecimentos}
+	% \thispagestyle{empty}
+	\pdfbookmark[0]{Agradecimentos}{acknowl}
+} {
+    \vfil\vfil\null{}
+    \cleardoublepage{}
+}
+
+\DeclareDocumentEnvironment{abstract}{}{
+	\checktoopen
+	\tttypeout{Resumo}
+	\thispagestyle{plain}
+	\chapter*{Resumo}
+	\pdfbookmark[0]{Resumo}{abstract}
+	}
+	{
+  	\vfill\null
+	}

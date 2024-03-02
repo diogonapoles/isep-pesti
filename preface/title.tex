@@ -1,0 +1,59 @@
+% Based on https://www.overleaf.com/latex/templates/isep-dee-bsc-latex-template/kqkmqnjbbpvj
+
+\newcommand{\textbetweenrules}[2][.3pt]{%
+    \par\vspace{\topsep}
+    \noindent\makebox[0.98\textwidth]{%
+        \sbox0{#2}%
+        \dimen0=.5\dimexpr\ht0+#1\relax{}
+        \dimen2=-.5\dimexpr\ht0-#1\relax{}
+        \leaders\hrule height \dimen0 depth \dimen2\hfill
+        \quad{} #2\quad{}
+        \leaders\hrule height \dimen0 depth \dimen2\hfill
+    }
+    \par\nopagebreak\vspace{\topsep}
+}
+
+
+\makeatletter
+\begin{titlepage}
+    \pdfbookmark[0]{Capa}{cover}
+    \begin{center}
+        {\scshape\normalsize{} \university}\\[3mm]
+        {\scshape\LARGE{} \school}
+        \HRuleFront{}
+
+        \vspace{1cm}
+        \includegraphics[width=6.5cm]{./img/dei_logo.jpg}\\
+
+        \vfill{}
+
+        {\huge{} \bfseries{} \@title\par}\vspace{0.4cm} % Thesis title
+
+        {\large{} \bfseries{} \company}\vspace{0.4cm}
+
+        {\bfseries{} 2023/2024}
+
+        \vfill{}
+        {\Large\bfseries{} \@author}\par{}\vspace{0.4cm}
+        {\large{} Orientador ISEP\@: \bfseries{} \orientador}\par{}\vspace{0.2cm}
+        {\large{} Supervisor Externo\@: \bfseries{} \supervisor}
+        \vfill{}
+        \textbetweenrules[.3pt]{\degreeacrn}
+        \vspace{0.05cm}
+        \frontcourselabel{}\par{}
+        \vspace{0.4cm}
+        \DTMsetdatestyle{mydateformat}
+        \ifdefined\datename{}
+        {\large{} \datename}\\[5mm]
+        \else{}
+        {\large{} \today}\\[5mm]
+        \fi{}
+        \vfill{}
+        \includegraphics[width=10cm]{./img/isep_logo.jpg}\\
+        % {\scshape\large{} \department}\\
+        % {\large{} \school}\\[1cm]
+    \end{center}
+
+
+\end{titlepage}
+\makeatother

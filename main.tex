@@ -1,0 +1,29 @@
+\documentclass[11pt, a4paper]{report}
+
+\newcommand{\addchapter}[1]{
+    \newpage{}
+    \include{./#1/index.tex}
+}
+
+\input{preamble}
+
+\input{config.tex}
+\input{glossary-terms.tex}
+
+\begin{document}
+
+\include{./preface/index.tex}
+
+\addchapter{intro}
+\addchapter{state-of-art}
+\addchapter{analysis-design}
+\addchapter{implementation}
+\addchapter{conclusions}
+
+\newpage{}
+\printbibliography{} % TODO check if \pdfbookmark is needed
+
+\appendix{}
+\include{./appendix/index.tex}
+
+\end{document}

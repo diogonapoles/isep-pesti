@@ -1,0 +1,27 @@
+# LaTeX build files
+*.aux
+*.bak
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.ist
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.toc
+
+# Compiled PDF
+PESTI-Report.pdf
+
+# Neovim configuration file
+.nvimrc
+
+# macOS folder configuration file
+.DS_Store
